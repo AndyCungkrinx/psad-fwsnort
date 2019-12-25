@@ -56,6 +56,10 @@ echo "==========================================================================
 Copying rules
 ======================================================================================================="
 cd $BPS
+mv /etc/fwsnort/fwsnort.conf /etc/fwsnort/fwsnort.conf.back
+mv /etc/psad/psad.conf /etc/psad/psad.conf.back
+cp $BPS/fwsnort.conf /etc/fwsnort/fwsnort.conf
+cp $BPS/psad.conf /etc/psad/psad.conf
 rm -rf /etc/fwsnort/snort_rules
 rm -rf /etc/psad/snort_rules
 cp $BPS/snort_rules/ /etc/fwsnort/snort_rules
