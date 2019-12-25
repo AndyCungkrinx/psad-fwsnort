@@ -64,6 +64,7 @@ rm -rf /etc/fwsnort/snort_rules
 rm -rf /etc/psad/snort_rules
 cp $BPS/snort_rules/ /etc/fwsnort/snort_rules
 cp $BPS/snort_rules/ /etc/psad/snort_rules
+ln -s /var/lib/fwnort/fwsnort.sh /usr/sbin/
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 All rules copied
