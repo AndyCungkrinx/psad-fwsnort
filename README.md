@@ -28,3 +28,19 @@ Installing PSAD+FWSNORT (make sure runnig as root user)<br>
 % ./centos-fw.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
+
+# Example using rules
+===============================================<br>
+Using community rules<br>
+===============================================<br>
+% fwsnort --include-type ddos,backdoor<br>
+% fwsnort.sh<br>
+% systemctl restart psad<br>
+% systemctl status psad<br>
+===============================================<br>
+Using emerging rules<br>
+===============================================<br>
+% fwsnort --include-type emerging.dos,emerging.scan<br>
+% fwsnort.sh<br>
+% systemctl restart psad<br>
+% systemctl status psad<br>
