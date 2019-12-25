@@ -5,11 +5,15 @@ Make sure u are running as root user <br>
 ================================================<br>
 Centos 7<br>
 ================================================<br>
+% mkdir $HOME/build<br>
+% BUILD=$HOME/build<br>
+% cd $BUILD<br>
 % git clone https://github.com/AndyCungkrinx/psad-fwsnort.git<br>
-% cd psad-fwsnort<br>
+% cd $BUILD/psad-fwsnort<br>
+% BPS=$BUILD/psad-fwsnort<br>
 % git checkout centos<br>
 % chmod u+x centos-upgrade-kernel.sh && chmod u+x centos-fw.sh<br>
-% BUILD=$PWD<br>
+<br>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
 Upgrade kernel first<br>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
