@@ -1,4 +1,4 @@
-# psad-fwsnort
+# Psad-Fwsnort
 Firewall combine with Iptables+PSAD+Fwsnort <br>
 Make sure u are running as root user <br>
 # Step For Installation <br>
@@ -29,20 +29,17 @@ Installing PSAD+FWSNORT (make sure runnig as root user)<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 
-===============================================<br>
-Configure PSAD<br>
-===============================================<br>
+
+# Configure PSAD
 % nano /etc/psad/psad.conf<br>
-- Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
-<h3>Note:</h3> <br>
+Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
+<u>Note:</u> <br>
 * For HOSTNAME you can leave with localhost<br>
 
-===============================================<br>
-Configure FWSNORT<br>
-===============================================<br>
+# Configure FWSNORT
 % nano /etc/fwsnort/fwsnort.conf<br>
 - Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
-<h3>Note:</h3> <br>
+<u>Note:</u> <br>
 * For HOSTNAME you can leave with localhost<br>
 
 # Example using rules
