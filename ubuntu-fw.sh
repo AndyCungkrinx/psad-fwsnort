@@ -21,9 +21,6 @@ apt install build-essential checkinstall iptables-persistent git wget perl bash 
 bison gcc g++ gettext gzip m4 make net-tools libpci-dev python-dev make automake \
 cmake openssl net-tools psmisc -y
 
-perl -MCPAN -e 'install Date::Calc'
-perl -MCPAN -e 'Unix::Syslog'
-
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
@@ -39,15 +36,12 @@ make modules
 make modules_install
 modprobe ts_pcre
 
-cd $BUILD
-wget http://www.cipherdyne.org/modules/IPTables-ChainMgr-1.6.tar.gz
-tar xfv IPTables-ChainMgr-1.6.tar.gz
-rm -rf IPTables-ChainMgr-1.6.tar.gz
-cd $BUILD/IPTables-ChainMgr-1.6
-perl Makefile.PL
-make
-make install
 
+perl -MCPAN -e 'install Date::Calc'
+perl -MCPAN -e 'install Unix::Syslog'
+perl -MCPAN -e 'install IPTables::ChainMgr'
+perl -MCPAN -e 'install IPTables::Parse'
+perl -MCPAN -e 'install NetAddr::IP'
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Done!
