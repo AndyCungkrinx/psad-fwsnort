@@ -52,7 +52,7 @@ Using community rules<br>
 ===============================================<br>
 Using emerging rules<br>
 ===============================================<br>
-% fwsnort --include-type emerging.dos,emerging.scan<br>
+% fwsnort --include-type emerging-dos,emerging-scan<br>
 % fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
