@@ -3,7 +3,7 @@ Firewall combine with Iptables+PSAD+Fwsnort <br>
 Make sure u are running as root user <br>
 # Step For Installation <br>
 ================================================<br>
-Centos 7<br>
+Ubuntu 18.04<br>
 ================================================<br>
 % mkdir $HOME/build<br>
 % BUILD=$HOME/build<br>

@@ -26,9 +26,9 @@ Depedencies has been installed
 echo "=======================================================================================================
 Build PCRE REGEX 
 ======================================================================================================="
-cd $BPS
+cd $BUILD
 git clone https://github.com/xnsystems/kpcre.git
-cd $BPS/kpcre
+cd $BUILD/kpcre
 make modules
 make modules_install
 modprobe ts_pcre
