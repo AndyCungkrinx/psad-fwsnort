@@ -11,13 +11,12 @@ Centos 7<br>
 % git clone https://github.com/AndyCungkrinx/psad-fwsnort.git<br>
 % BPS=$BUILD/psad-fwsnort<br>
 % cd $BPS<br>
-% git checkout centos<br>
-% chmod u+x centos-upgrade-kernel.sh && chmod u+x centos-fw.sh<br>
+% chmod u+x ubuntu-up-kernel.sh && chmod u+x ubuntu-fw.sh<br>
 <br>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
 Upgrade kernel first<br>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
-% ./centos-upgrade-kernel.sh<br>
+% ./ubuntu-up-kernel.sh<br>
 % reboot<br>
 
 ===============================================<br>
@@ -25,7 +24,7 @@ Installing PSAD+FWSNORT (make sure runnig as root user)<br>
 ===============================================<br>
 % BPS=$HOME/build/psad-fwsnort<br>
 % cd $BPS<br>
-% ./centos-fw.sh<br>
+% ./ubuntu-fw.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 
