@@ -16,7 +16,9 @@ Installing Depedencies
 ======================================================================================================="
 yum --enablerepo=extras install epel-release
 yum update
-yum install git wget pcre pcre-devel make automake cmake gcc-c++ openssl net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog -y
+yum install git wget perl audit-libs-devel bash bc binutils binutils-devel bison gcc gettext gzip m4 make module-init-tools ncurses-devel \
+net-tools newt-devel numactl-devel pciutils-devel perl-ExtUtils-Embed pesign python-devel zlib-devel pcre pcre-devel make automake \
+cmake gcc-c++ kernel-devel openssl net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog -y
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -25,11 +27,11 @@ echo "==========================================================================
 Installing PSAD 
 ======================================================================================================="
 cd $BPS
-iptables-save > $HOME/iptables.back
 iptables -F
 iptables -X
 iptables -A INPUT -j LOG
 iptables -A INPUT -j LOG
+iptables-save > $HOME/iptables.back
 touch /usr/bin/whois_psad
 wget http://www.cipherdyne.com/psad/download/psad-2.4.6.tar.gz
 tar xfz psad-2.4.6.tar.gz
@@ -71,3 +73,29 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 All rules copied
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
+echo "=======================================================================================================
+Enabling rc-local
+======================================================================================================="
+cat >/etc/rc.d/rc.local  <<EOL
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+iptables-restore < ~/iptables.back
+systemctl restart psad
+EOL
+chmod +x /etc/rc.d/rc.local
+systemctl enable rc-local
+
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+rc-local has been enabled
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
