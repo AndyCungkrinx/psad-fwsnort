@@ -29,6 +29,22 @@ Installing PSAD+FWSNORT (make sure runnig as root user)<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 
+===============================================<br>
+Configure PSAD<br>
+===============================================<br>
+% nano /etc/psad/psad.conf<br>
+- Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
+<h3>Note:</h3> <br>
+* For HOSTNAME you can leave with localhost<br>
+
+===============================================<br>
+Configure FWSNORT<br>
+===============================================<br>
+% nano /etc/fwsnort/fwsnort.conf<br>
+- Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
+<h3>Note:</h3> <br>
+* For HOSTNAME you can leave with localhost<br>
+
 # Example using rules
 ===============================================<br>
 Using community rules<br>
