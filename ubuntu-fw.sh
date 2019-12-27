@@ -21,12 +21,16 @@ apt install build-essential checkinstall iptables-persistent git wget perl bash 
 bison gcc g++ gettext gzip m4 make net-tools libpci-dev python-dev make automake \
 cmake openssl net-tools psmisc -y
 
+perl -MCPAN -e 'install Date::Calc'
+perl -MCPAN -e 'Unix::Syslog'
+
+
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 echo "=======================================================================================================
-Build PCRE REGEX 
+Build modules 
 ======================================================================================================="
 cd $BUILD
 git clone https://github.com/xnsystems/kpcre.git
@@ -34,6 +38,17 @@ cd $BUILD/kpcre
 make modules
 make modules_install
 modprobe ts_pcre
+
+cd $BUILD
+wget http://www.cipherdyne.org/modules/IPTables-ChainMgr-1.6.tar.gz
+tar xfv IPTables-ChainMgr-1.6.tar.gz
+rm -rf IPTables-ChainMgr-1.6.tar.gz
+cd $BUILD/IPTables-ChainMgr-1.6
+perl Makefile.PL
+make
+make install
+
+
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Done!
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -50,6 +65,7 @@ iptables-save > $HOME/iptables.back
 touch /usr/bin/whois_psad
 wget http://www.cipherdyne.com/psad/download/psad-2.4.6.tar.gz
 tar xfz psad-2.4.6.tar.gz
+rm -rf psad-2.4.6.tar.gz
 cd $BPS/psad-2.4.6
 ./install.pl
 
@@ -63,6 +79,7 @@ Installing FWSNORT
 cd $BPS
 wget https://www.cipherdyne.org/fwsnort/download/fwsnort-1.6.8.tar.gz
 tar xfz fwsnort-1.6.8.tar.gz
+rm -rf fwsnort-1.6.8.tar.gz
 cd $BPS/fwsnort-1.6.8
 ./install.pl
 
