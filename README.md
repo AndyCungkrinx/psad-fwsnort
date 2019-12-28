@@ -3,13 +3,14 @@ Firewall combine with Iptables+PSAD+Fwsnort <br>
 Make sure u are running as root user <br>
 # Step For Installation <br>
 ================================================<br>
-Ubuntu 18.04<br>
+Ubuntu 18.04 ARM64<br>
 ================================================<br>
 % mkdir $HOME/build<br>
 % BUILD=$HOME/build<br>
 % cd $BUILD<br>
 % git clone https://github.com/AndyCungkrinx/psad-fwsnort.git<br>
 % BPS=$BUILD/psad-fwsnort<br>
+% git checkout ubuntu-arm64<br>
 % cd $BPS<br>
 % chmod u+x ubuntu-up-kernel.sh && chmod u+x ubuntu-fw.sh<br>
 <br>

@@ -16,11 +16,14 @@ echo "==========================================================================
 echo "=======================================================================================================
 Installing Depedencies
 ======================================================================================================="
+add-apt-repository ppa:ubuntu-toolchain-r/test
 apt update
-apt install build-essential checkinstall iptables-persistent git wget perl bash bc binutils binutils-dev \
-bison gcc g++ gettext gzip m4 make net-tools libpci-dev python-dev make automake \
+apt install build-essential checkinstall libpcre3 libpcre3-dev zlib1g-dev iptables-persistent git wget perl bash bc binutils binutils-dev \
+bison libunwind-dev g++-8 gcc-8 gettext gzip m4 make net-tools libpci-dev python-dev make automake \
 cmake openssl net-tools psmisc -y
 
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+update-alternatives --config gcc
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
@@ -32,8 +35,8 @@ Build modules
 cd $BUILD
 git clone https://github.com/xnsystems/kpcre.git
 cd $BUILD/kpcre
-make modules
-make modules_install
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17' modules
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17' modules_install
 modprobe ts_pcre
 
 
@@ -51,6 +54,8 @@ echo "==========================================================================
 Installing PSAD 
 ======================================================================================================="
 cd $BPS
+ufw reset
+ufw disable
 iptables -F
 iptables -X
 iptables -A INPUT -j LOG
