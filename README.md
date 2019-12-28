@@ -43,14 +43,14 @@ Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
 
 # Example using rules
 ===============================================<br>
-Using community rules<br>
+Using community rules (you can see using command "ls /etc/fwsnort/snort_rules")<br>
 ===============================================<br>
 % fwsnort --include-type ddos,backdoor<br>
 % fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 ===============================================<br>
-Using emerging rules<br>
+Using emerging rules (you can see using command "ls /etc/fwsnort/snort_rules")<br>
 ===============================================<br>
 % fwsnort --include-type emerging-dos,emerging-scan<br>
 % fwsnort.sh<br>
