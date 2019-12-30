@@ -19,7 +19,7 @@ yum --enablerepo=extras install epel-release
 yum update
 yum install git autoconf wget perl bison gcc gettext gzip m4 make net-tools perl-ExtUtils-Embed \
 python-devel zlib-devel pcre pcre-devel make automake cmake gcc-c++ kernel-devel openssl \
-net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog libpcap-devel \
+net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog perl-IPTables-Parse perl-NetAddr-IP libpcap-devel \
 libpcre3-devel libdumbnet-devel bison flex zlib-devel liblzma-devel openssl libssl-devel -y
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
