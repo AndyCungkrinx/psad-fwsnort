@@ -133,7 +133,7 @@ Enabling rc-local
 cat >/etc/rc.local  <<EOL
 #!/bin/bash
 
-iptables-restore < ~/iptables.back
+iptables-restore < /etc/iptables/rules.v4
 systemctl restart psad
 modprobe ts_pcre
 exit 0
