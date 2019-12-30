@@ -59,6 +59,5 @@ Using emerging rules<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 
-# Enabling rules every reboot
+# Saving all rules permanently
 % iptables-save > /etc/sysconfig/iptables<br>
-% ip6tables-save > /etc/sysconfig/ip6tables<br>
