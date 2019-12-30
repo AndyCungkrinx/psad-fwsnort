@@ -57,3 +57,6 @@ Using emerging rules (you can see using command "ls /etc/fwsnort/snort_rules")<b
 % /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
+
+# Saving all rules permanently
+% iptables-save > /etc/iptables/rules.v4<br>
