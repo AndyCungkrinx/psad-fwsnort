@@ -13,11 +13,11 @@ Make sure u are running as root user <br>
 % cd $BPS<br>
 % chmod u+x ubuntu-up-kernel.sh && chmod u+x ubuntu-fw.sh<br>
 <br>
-<h4>Upgrade kernel first</h4>
+<h3>Upgrade kernel first</h3>
 % ./ubuntu-up-kernel.sh<br>
 % reboot<br>
 
-<h4>Installing PSAD+FWSNORT (make sure runnig as root user)</h4>
+<h3>Installing PSAD+FWSNORT (make sure runnig as root user)</h3>
 % BPS=$HOME/build/psad-fwsnort<br>
 % cd $BPS<br>
 % ./ubuntu-fw.sh<br>
