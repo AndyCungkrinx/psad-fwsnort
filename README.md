@@ -17,7 +17,7 @@ Make sure u are running as root user <br>
 % ./ubuntu-up-kernel.sh<br>
 % reboot<br>
 
-<h3>Installing PSAD+FWSNORT (make sure runnig as root user)</h3>
+<h4>Installing PSAD+FWSNORT (make sure runnig as root user)</h4>
 % BPS=$HOME/build/psad-fwsnort<br>
 % cd $BPS<br>
 % ./ubuntu-fw.sh<br>
