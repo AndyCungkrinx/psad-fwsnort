@@ -58,3 +58,7 @@ Using emerging rules<br>
 % /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
+
+# Enabling rules every reboot
+% iptables-save > /etc/sysconfig/iptables<br>
+% ip6tables-save > /etc/sysconfig/ip6tables<br>
