@@ -17,9 +17,9 @@ Installing Depedencies
 ======================================================================================================="
 yum --enablerepo=extras install epel-release
 yum update
-yum install git wget perl audit-libs-devel bash bc binutils binutils-devel bison gcc gettext gzip m4 make module-init-tools ncurses-devel \
-net-tools newt-devel numactl-devel pciutils-devel perl-ExtUtils-Embed pesign python-devel zlib-devel pcre pcre-devel make automake \
-cmake gcc-c++ kernel-devel openssl net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog -y
+yum install git wget perl bison gcc gettext gzip m4 make net-tools perl-ExtUtils-Embed \
+python-devel zlib-devel pcre pcre-devel make automake cmake gcc-c++ kernel-devel openssl \
+net-tools psmisc perl-IPTables-ChainMgr perl-Date-Calc perl-Unix-Syslog -y
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
