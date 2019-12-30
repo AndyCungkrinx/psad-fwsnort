@@ -4,7 +4,7 @@ This running as layer 7 NGFirewall. If u need using layer 2 for next level harde
 Make sure u are running as root user <br>
 # Step For Installation <br></h4>
 
-<h2>Ubuntu 18.04</h2>
+# Ubuntu 18.04
 % mkdir $HOME/build<br>
 % BUILD=$HOME/build<br>
 % cd $BUILD<br>
