@@ -28,6 +28,33 @@ Depedencies has been installed
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 echo "=======================================================================================================
+Upgrading Iptables
+======================================================================================================="
+cd $BPS
+wget http://www.netfilter.org/projects/iptables/files/iptables-1.8.3.tar.bz2
+tar -xvf iptables-1.8.3.tar.bz2
+cd iptables-1.8.3
+
+./configure --prefix=/usr      \
+            --sbindir=/sbin    \
+            --disable-nftables \
+            --enable-libipq    \
+            --with-xtlibdir=/lib/xtables &&
+make
+
+make install &&
+ln -sfv ../../sbin/xtables-legacy-multi /usr/bin/iptables-xml &&
+
+for file in ip4tc ip6tc ipq xtables
+do
+  mv -v /usr/lib/lib${file}.so.* /lib &&
+  ln -sfv ../../lib/$(readlink /usr/lib/lib${file}.so) /usr/lib/lib${file}.so
+done
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Iptables upgraded
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+echo "=======================================================================================================
 Build modules 
 ======================================================================================================="
 cd $BUILD
