@@ -3,9 +3,8 @@
 This running as layer 7 NGFirewall. If u need using layer 2 for next level hardening, you can using firewalld or UWF.<br>
 Make sure u are running as root user <br>
 # Step For Installation <br></h4>
-================================================<br>
-<h2>Ubuntu 18.04</h2><br>
-================================================<br>
+
+<h2>Ubuntu 18.04</h2>
 % mkdir $HOME/build<br>
 % BUILD=$HOME/build<br>
 % cd $BUILD<br>
@@ -14,15 +13,11 @@ Make sure u are running as root user <br>
 % cd $BPS<br>
 % chmod u+x ubuntu-up-kernel.sh && chmod u+x ubuntu-fw.sh<br>
 <br>
-+++++++++++++++++++++++++++++++++++++++++++++++<br>
-<h4>Upgrade kernel first</h4><br>
-+++++++++++++++++++++++++++++++++++++++++++++++<br>
+<h4>Upgrade kernel first</h4>
 % ./ubuntu-up-kernel.sh<br>
 % reboot<br>
 
-===============================================<br>
-<h3>Installing PSAD+FWSNORT (make sure runnig as root user)</h3><br>
-===============================================<br>
+<h3>Installing PSAD+FWSNORT (make sure runnig as root user)</h3>
 % BPS=$HOME/build/psad-fwsnort<br>
 % cd $BPS<br>
 % ./ubuntu-fw.sh<br>
@@ -43,16 +38,13 @@ Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
 * For HOSTNAME you can leave with localhost<br>
 
 # Example using rules
-===============================================<br>
-<h3>Using community rules (you can see using command "ls /etc/fwsnort/snort_rules")</h3><br>
-===============================================<br>
+<h3>Using community rules (you can see using command "ls /etc/fwsnort/snort_rules")</h3>
 % fwsnort --include-type ddos,backdoor --ipt-drop<br>
 % /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
-===============================================<br>
-<h3>Using emerging rules (you can see using command "ls /etc/fwsnort/snort_rules")</h3><br>
-===============================================<br>
+
+<h3>Using emerging rules (you can see using command "ls /etc/fwsnort/snort_rules")</h3>
 % fwsnort --include-type emerging-dos,emerging-scan --ipt-drop<br>
 % /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
