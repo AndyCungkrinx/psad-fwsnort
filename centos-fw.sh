@@ -156,7 +156,7 @@ cat >/etc/rc.d/rc.local  <<EOL
 # that this script will be executed during boot.
 
 touch /var/lock/subsys/local
-iptables-restore < ~/iptables.back
+iptables-restore < /etc/sysconfig/iptables
 systemctl restart psad
 EOL
 chmod +x /etc/rc.d/rc.local
