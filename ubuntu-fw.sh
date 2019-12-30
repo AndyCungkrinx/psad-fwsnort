@@ -19,7 +19,7 @@ Installing Depedencies
 apt update
 apt install build-essential libpcre3 libpcre3-dev zlib1g-dev checkinstall iptables-persistent git wget perl bash bc binutils binutils-dev \
 bison g++-8 gcc-8 libunwind-dev gettext gzip m4 make net-tools libpci-dev python-dev make automake \
-cmake openssl net-tools psmisc -y
+cmake openssl net-tools psmisc libpcap-dev libpcre3-dev libdumbnet-dev bison flex zlib1g-dev liblzma-dev openssl libssl-dev -y
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 update-alternatives --config gcc
 
