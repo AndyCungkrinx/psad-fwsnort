@@ -47,14 +47,14 @@ Change value of HOSTNAME to <your_domain> and HOME_NET to <your_ip><br>
 ===============================================<br>
 Using community rules<br>
 ===============================================<br>
-% fwsnort --include-type ddos,backdoor<br>
-% fwsnort.sh<br>
+% fwsnort --include-type ddos,backdoor --ipt-drop<br>
+% /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
 ===============================================<br>
 Using emerging rules<br>
 ===============================================<br>
-% fwsnort --include-type emerging.dos,emerging.scan<br>
-% fwsnort.sh<br>
+% fwsnort --include-type emerging-dos,emerging-scan --ipt-drop<br>
+% /var/lib/fwsnort/fwsnort.sh<br>
 % systemctl restart psad<br>
 % systemctl status psad<br>
