@@ -83,7 +83,7 @@ iptables -F
 iptables -X
 iptables -A INPUT -j LOG
 iptables -A INPUT -j LOG
-iptables-save > $HOME/iptables.back
+iptables-save > /etc/iptables/rules.v4
 touch /usr/bin/whois_psad
 wget http://www.cipherdyne.com/psad/download/psad-2.4.6.tar.gz
 tar xfz psad-2.4.6.tar.gz
