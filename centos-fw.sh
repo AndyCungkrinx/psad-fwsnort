@@ -95,7 +95,7 @@ cd $BPS
 iptables -F
 iptables -X
 iptables -A INPUT -j LOG
-iptables -A INPUT -j LOG
+iptables -A OUTPUT -j LOG
 iptables-save > /etc/sysconfig/iptables
 touch /usr/bin/whois_psad
 wget http://www.cipherdyne.com/psad/download/psad-2.4.6.tar.gz
