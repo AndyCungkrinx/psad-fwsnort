@@ -42,7 +42,6 @@ Upgrading Perl
 ======================================================================================================="
 yum install centos-release-scl-rh -y
 yum --enablerepo=centos-sclo-rh-testing install rh-perl526-perl -y
-scl enable rh-perl526 bash
 
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Depedencies has been installed
@@ -161,7 +160,7 @@ systemctl restart psad
 EOL
 chmod +x /etc/rc.d/rc.local
 systemctl enable rc-local
-
+scl enable rh-perl526 bash
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 rc-local has been enabled
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
