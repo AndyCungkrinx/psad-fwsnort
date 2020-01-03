@@ -40,9 +40,9 @@ cd iptables-1.8.3
             --disable-nftables \
             --enable-libipq    \
             --with-xtlibdir=/lib/xtables &&
-make
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17'
 
-make install &&
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17' install &&
 ln -sfv ../../sbin/xtables-legacy-multi /usr/bin/iptables-xml &&
 
 for file in ip4tc ip6tc ipq xtables
@@ -60,8 +60,8 @@ Build modules
 cd $BUILD
 git clone https://github.com/xnsystems/kpcre.git
 cd $BUILD/kpcre
-make modules
-make modules_install
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17' modules
+make -j4 EXTRA_CMAKE_OPTIONS='-DCMAKE_C_COMPILER=arm64-linux-gcc -DCMAKE_CXX_COMPILER=arm64-linux-gnu-g++ -DCXX_STANDARD_REQUIRED=c++17' modules_install
 modprobe ts_pcre
 
 
@@ -132,7 +132,6 @@ Enabling rc-local
 ======================================================================================================="
 cat >/etc/rc.local  <<EOL
 #!/bin/bash
-
 iptables-restore < /etc/iptables/rules.v4
 systemctl restart psad
 modprobe ts_pcre
